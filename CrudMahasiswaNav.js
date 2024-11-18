@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Profil from './App';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
-import { faUserGraduate } from '@fortawesome/free-solid-svg-icons';
+import { faUserGraduate, faPlusCircle, faUser } from '@fortawesome/free-solid-svg-icons';
 import WebView from 'react-native-webview';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import Createdata from './Createdata';
@@ -22,11 +22,9 @@ function DataMahasiswaScreen() {
       <Mahasiswa/>
   );
 }
-function WebScreen() {
+function EditScreen() {
   return (
-    <WebView
-    source={{ uri: 'https://github.com/veronicatia' }}
-  />
+    <Editdata/>
   );
 }
 
@@ -52,11 +50,11 @@ export default function App() {
           ),
         }}
       />
-        <Tab.Screen name="Github" component={WebScreen} 
+        <Tab.Screen name="Github" component={EditScreen} 
         options={{
           
           tabBarIcon: ({ color }) => (
-            <FontAwesomeIcon icon={faGithub} color={color} size={20} />
+            <FontAwesomeIcon icon={faPlusCircle} color={color} size={20} />
           ),
         }}
       />
